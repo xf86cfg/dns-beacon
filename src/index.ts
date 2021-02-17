@@ -1,1 +1,5 @@
-console.log('Hello World!')
+import { main } from './main'
+;(async () => {
+  console.log('Starting DNS beacon')
+  await main()
+})()
