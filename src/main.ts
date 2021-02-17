@@ -2,6 +2,8 @@ import { getPublicIp } from './get-public-ip'
 import { tryUpdateDnsRecord } from './dns'
 import { exit } from 'process'
 
+const timeout = 60 * 1000
+
 export async function main() {
   const recordName = process.env.RECORD_NAME,
     hostedZoneId = process.env.HOSTED_ZONE_ID,
@@ -26,5 +28,5 @@ export async function main() {
     console.log('Execution error', ex)
   }
 
-  setTimeout(() => main(), 10000)
+  setTimeout(() => main(), timeout)
 }
